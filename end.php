@@ -1,21 +1,22 @@
 <?php
 	include("inicio.php");
-	if(isset($_POST['nombre']) && !empty($_POST['nombre']) && isset($_POST['proyecto']) && 
-     !empty($_POST['proyecto'])){
-        
-        
-	
-    $con=mysqli_connect($host,$user,$pw,$db)or die("Problemas al conectar");
-    // mysqli_select_db($db, $con) or die("Problemas al conectar la bd");
+  if(isset($_POST['nombre']) && !empty($_POST['nombre']) && isset($_POST['lastname']) && !empty($_POST['lastname'])
+  && isset($_POST['cliente']) && !empty($_POST['cliente']) && isset($_POST['fecha']) && !empty($_POST['fecha'])
+  && isset($_POST['homework']) && !empty($_POST['homework']) && isset($_POST['descripcion']) && !empty($_POST['descripcion'])
+  && isset($_POST['ingreso']) && !empty($_POST['ingreso'])  && isset($_POST['exit']) && !empty($_POST['exit'])
+  && isset($_POST['regreso']) && !empty($_POST['regreso'])  && isset($_POST['egreso']) && !empty($_POST['egreso'])){
 
-    // mysqli_query("INSERT INTO consultores (NOMBRE) VALUES ('$_POST[nombre]')",$con);
-    //  mysqli_query($con,"INSERT INTO alt.consultores VALUES (NOMBRE,PROYETO) = ('$name','$proyect')");
-    mysqli_query($con,"INSERT INTO alt.consultores SET NOMBRE = ('$_POST[nombre]'),PROYETO = ('$_POST[proyecto]')");
+    $con=mysqli_connect($host,$user,$pw,$db)or die("Problemas al conectar");
+
+    mysqli_query($con, "INSERT INTO alt.actividades SET nombre = ('$_POST[nombre]') , apellido = ('$_POST[lastname]'), cliente =('$_POST[cliente]'),
+    fecha_registro = ('$_POST[fecha]'), tareas_realizadas = ('$_POST[homework]'), descripcion = ('$_POST[descripcion]'), 
+    ingreso = ('$_POST[ingreso]'), salida_almuerzo =('$_POST[exit]'), regreso_almuerzo = ('$_POST[regreso]'), 
+    egreso = ('$_POST[egreso]')");
     
     echo "datos insertado";
     
 	}else {
-	  echo "no se ha podido guardar los adatos";
+	  echo "no se ha podido guardar los datos";
 	}
 ?>
 
