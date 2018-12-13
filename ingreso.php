@@ -9,12 +9,11 @@
     <title>Ingreso</title>
 </head>
 <body>
-    
         <div class= "container ">
                 <h2>Export Data to Excel</h2>
                 <div class="well-sm col-sm-12">
                 <div class="btn-group pull-right">
-                <form action=<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+                <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
                 <button type="submit" id="export_data" name='export_data' value="Export to excel" class="btn btn-info">Export to excel</button>
                 </form>
                 </div>

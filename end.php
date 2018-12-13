@@ -19,6 +19,3 @@
 	  echo "no se ha podido guardar los datos";
 	}
 ?>
-
-
-
