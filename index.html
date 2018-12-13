@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+    <title>Jornada Laboral</title>
+
+</head>
+
+<body>
+    <div id="principal">
+        <section class=" container ">
+            <h2 class="title">Reporte Actividades ALT</h2>
+            <p>Dilegenciar todos los campos </p>
+            <form action="end.php" method="POST" id="formulario" name="formLabores">
+                <ul>
+                    <div class="inpu">
+                        <label> NOMBRE <input id="name" type="text" name="nombre" placeholder="Nombre" required class="texto">
+                        </label>
+                        <label> APELLIDO<input id="lastname" type="text" name="nombre" placeholder="Aapellidos"
+                                required class="texto">
+                        </label>
+
+                        <label> CLIENTE<input  type="text" name="cliente" placeholder="Aapellidos" required
+                                class="texto">
+                        </label>
+                        <div class="inpu">
+                            <label>Fecha de Registro<input type="date" name="fecha" class="texto" value="" required /></label>
+                        </div>
+
+                        <div class="inpu"><label>TAREAS REALIZADAS<input type="text" name="homework" /></label></div>
+                        <div class="inpu"><label>DESCRIPCION<input type="text" name="descripcion"></label></div>
+
+                        <div class="time">
+                            <label>Ingreso<input type="time" name="hora" /></label>
+                        </div>
+
+                        <div class="time">
+                            <label>Salida Almuerzo<input type="time" name="exit" min="" max="" step="" /></label>
+                        </div>
+
+                        <div class="time">
+                            <label>Regreso Almuerzo<input type="time" name="regreso" /></label>
+                        </div>
+
+                        <div class="time">
+                            <label>Egreso<input type="time" name="egreso" /></label>
+                        </div>
+                        <div class="time">
+                            <input type="submit" name="enviar" value="Enviar" />
+                        </div>
+
+                    </div>
+
+
+
+        </section>
+        <!-- <button id="next" class="buttons" value="next">Next</button> -->
+
+    </div>
+
+    <!-- <section class="mainContainer hidden">
+
+        <h2></h2>
+        
+        
+        <div class="inpu">
+            <label>DESCRIPCION<input type="text" name="descr" /></label>
+        </div>
+
+        <section class="proyec ">
+            <h2>HORAS REALIZADAS</h2>
+
+            
+            
+        </section>
+    </section> -->
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="formu.js"></script>
+</body>
+
+</html>
