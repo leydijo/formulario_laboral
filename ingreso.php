@@ -1,7 +1,6 @@
 <?php 
 require_once 'function/conexion.php';
-require_once 'function/allconexions.php';
-
+require_once 'function/getAllconexions.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,7 +31,7 @@ require_once 'function/allconexions.php';
       </thead>
       <tbody>
       <?php 
-      $informe = allConexiions();
+      $informe = getAllconexions();
       while($row = $informe->fetch_array(MYSQLI_ASSOC))
       {
         echo '<tr>';
@@ -49,3 +48,4 @@ require_once 'function/allconexions.php';
 </div>
 </body>
 </html>
+

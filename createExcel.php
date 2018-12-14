@@ -5,6 +5,8 @@ activeErrorReporting();
 noCli();
 require_once 'Classes/PHPExcel.php';
 require_once 'function/conexion.php';
+require_once 'getAllconexions.php';
+
 
 $objPHPExcel = new PHPExcel();
 // Set document properties
@@ -22,29 +24,17 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('B1', 'NOMBRE')
             ->setCellValue('C1', 'APELLIDO')
             ->setCellValue('D1', 'CLIENTE');
-$informe = getAllListsAndVideos();
+
+$informe = getAllconexions();
 $i = 2;
-// while($row = $informe->fetch_array(MYSQLI_ASSOC))
-// {
-// $objPHPExcel->setActiveSheetIndex(0)
-//             ->setCellValue("A$i", $row['id'])
-//             ->setCellValue("B$i", $row['nombre'])
-//             ->setCellValue("C$i", $row['apellido'])
-//             ->setCellValue("D$i", $row['cliente']);
-// $i++;
-// }
-
-while($row = $resultado->fetch_assoc())
+while($row = $informe->fetch_array(MYSQLI_ASSOC))
 {
-    $objPHPExcel->setActiveSheetIndex(0)
- 
-    $objPHPExcel->setActiveSheetIndex(0)   
-    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $row['id']);
-    $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $row['nombre']);
-    $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $row['apellido']);
-    $objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $row['cliente']);
-
-    $fila++;
+$objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue("A$i", $row['id'])
+            ->setCellValue("B$i", $row['nombre'])
+            ->setCellValue("C$i", $row['apellido'])
+            ->setCellValue("D$i", $row['cliente']);
+$i++;
 }
 
 $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setAutoSize(true);
