@@ -1,24 +1,21 @@
 <?php 
-require_once 'function/conexion.php';
-require_once 'function/getAllconexions.php';
+include('inicio.php');
+$alumnos="SELECT * FROM actividades order by id";
+$resAlumnos=$conexion->query($alumnos);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Exportar informe Excel</title>
+  <title>Descargar informe Laboral</title>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
   <div class="page-header text-left">
     <h1>Exportar informe </h1>
   </div>
-  <a href="createExcel.php" target="_blank">Descargar informe en excel</a>
   <div class="row">
     <table class="table table-bordered">
       <thead>
@@ -31,21 +28,26 @@ require_once 'function/getAllconexions.php';
       </thead>
       <tbody>
       <?php 
-      $informe = getAllconexions();
-      while($row = $informe->fetch_array(MYSQLI_ASSOC))
+      while($registroAlumnos = $resAlumnos->fetch_array(MYSQLI_BOTH))
       {
-        echo '<tr>';
-        echo "<td>$row[id]</td>";
-        echo "<td>$row[nombre]</td>";
-        echo "<td>$row[apellido]</td>";
-        echo "<td>$row[cliente]</td>";
-        echo '</tr>';
+        echo'<tr>
+						 <td>'.$registroAlumnos['id'].'</td>
+						 <td>'.$registroAlumnos['nombre'].'</td>
+						 <td>'.$registroAlumnos['apellido'].'</td>
+						 <td>'.$registroAlumnos['cliente'].'</td>
+						 </tr>';
       }
       ?>
       </tbody>
     </table>
   </div>
 </div>
+<form method="post" class="form" action="consulta.php">
+<input type="text" name="nombre1">
+<input type="date" name="fecha1">
+<input type="date" name="fecha2">
+<input type="submit" name="generar_reporte">
+</form>
 </body>
 </html>
 

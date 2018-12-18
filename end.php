@@ -8,7 +8,8 @@
 
     $con=mysqli_connect($host,$user,$pw,$db)or die("Problemas al conectar");
 
-    mysqli_query($con, "INSERT INTO alt.actividades SET nombre = ('$_POST[nombre]') , apellido = ('$_POST[lastname]'), cliente =('$_POST[cliente]'),
+    mysqli_query($con, "INSERT INTO alt.actividades SET nombre = ('$_POST[nombre]') , apellido = ('$_POST[lastname]'), 
+    cliente =('$_POST[cliente]'),
     fecha_registro = ('$_POST[fecha]'), tareas_realizadas = ('$_POST[homework]'), descripcion = ('$_POST[descripcion]'), 
     ingreso = ('$_POST[ingreso]'), salida_almuerzo =('$_POST[exit]'), regreso_almuerzo = ('$_POST[regreso]'), 
     egreso = ('$_POST[egreso]')");
