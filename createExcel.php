@@ -1,11 +1,13 @@
 <?php 
 require_once 'function/excel.php';
-
+require 'inicio.php';
 activeErrorReporting();
 noCli();
 require_once 'Classes/PHPExcel.php';
 require_once 'function/conexion.php';
-require_once 'getAllconexions.php';
+require_once 'function/getAllconexions.php';
+
+
 
 
 $objPHPExcel = new PHPExcel();
@@ -27,7 +29,7 @@ $objPHPExcel->setActiveSheetIndex(0)
 
 $informe = getAllconexions();
 $i = 2;
-while($row = $informe->fetch_array(MYSQLI_ASSOC))
+while($row = $informe->fetch_array(MYSQLI_BOTH))
 {
 $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue("A$i", $row['id'])

@@ -1,14 +1,10 @@
-<?
-$host = "localhost";
-$user = "root";
-$pw = "S0p0rt32019";
-$db = "alt";
 
 
-$conexion= new mysqli($host, $user, $pw, $db);
-if ($conexion -> connect_errno)
+<?php 
+function getConnexion()
 {
-	die("Fallo la conexion:(".$conexion -> mysqli_connect_errno().")".$conexion-> mysqli_connect_error());
+  $mysqli = new Mysqli('localhost', 'root', 'S0p0rt32019', 'alt');
+  if($mysqli->connect_errno) exit('Error en la conexión: ' . $mysqli->connect_errno);
+  $mysqli->set_charset('utf8');
+  return $mysqli;
 }
-?>
-

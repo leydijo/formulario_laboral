@@ -16,6 +16,12 @@ $resAlumnos=$conexion->query($alumnos);
   <div class="page-header text-left">
     <h1>Exportar informe </h1>
   </div>
+  <form method="post" class="form" action="consulta.php">
+<input type="date" name="fecha1">
+<input type="date" name="fecha2">
+<input type="text" name="cliente">
+<input type="submit" name="generar_reporte">
+</form>
   <div class="row">
     <table class="table table-bordered">
       <thead>
@@ -42,12 +48,7 @@ $resAlumnos=$conexion->query($alumnos);
     </table>
   </div>
 </div>
-<form method="post" class="form" action="consulta.php">
-<input type="text" name="nombre1">
-<input type="date" name="fecha1">
-<input type="date" name="fecha2">
-<input type="submit" name="generar_reporte">
-</form>
+
 </body>
 </html>
 
