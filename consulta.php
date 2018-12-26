@@ -14,7 +14,7 @@ if(isset($_POST['generar_reporte']))
 	// SALIDA DEL ARCHIVO
 	$salida=fopen('php://output', 'w');
 	// ENCABEZADOS las columnas del excel
-	fputcsv($salida, array('Identificador', 'Nombre', 'Apellido', 'Cliente','ingreso','egreso','total'));
+	fputcsv($salida, array('Identificador', 'Nombre', 'Apellido', 'Cliente','ingreso','egreso','totalhoras'));
 	// QUERY PARA CREAR EL REPORTE
 	$reporteCsv=$conexion->query("SELECT * FROM actividades where fecha_registro BETWEEN '$fecha1' AND '$fecha2'  ORDER BY id ");
 	
@@ -26,7 +26,7 @@ if(isset($_POST['generar_reporte']))
 								$filaR['cliente'],
 								$filaR['ingreso'],
 								$filaR['egreso'],
-								$filaR['total']));
+								$filaR['totalhoras']));
 }
 
 
