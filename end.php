@@ -13,7 +13,7 @@
     cliente =('$_POST[cliente]'),
     fecha_registro = ('$_POST[fecha]'), tareas_realizadas = ('$_POST[homework]'), descripcion = ('$_POST[descripcion]'), 
     ingreso = ('$_POST[ingreso]'), salida_almuerzo =('$_POST[exit]'), regreso_almuerzo = ('$_POST[regreso]'), 
-    egreso = ('$_POST[egreso]'),totalhoras = TIMEDIFF((TIMEDIFF(('$_POST[egreso]'),('$_POST[ingreso]'))),
+    egreso = ('$_POST[egreso]'),horasdias = TIMEDIFF((TIMEDIFF(('$_POST[egreso]'),('$_POST[ingreso]'))),
     (TIMEDIFF(('$_POST[regreso]'),('$_POST[exit]'))))");
     
     echo "datos insertado";

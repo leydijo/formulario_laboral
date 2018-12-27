@@ -17,10 +17,10 @@ $resAlumnos=$conexion->query($alumnos);
     <h1>Exportar informe </h1>
   </div>
   <form method="post" class="form" action="consulta.php">
-<input type="date" name="fecha1">
-<input type="date" name="fecha2">
-<input type="text" name="nombre">
-<input type="text" name="apellido">
+  <input type="date" name="fecha1">
+  <input type="date" name="fecha2">
+<input type="text" name="nombre" placeholder="Nombre">
+<input type="text" name="apellido" placeholder="Apellidos">
 <input type="submit" name="generar_reporte">
 </form>
   <div class="row">
@@ -43,7 +43,7 @@ $resAlumnos=$conexion->query($alumnos);
 						 <td>'.$registroAlumnos['nombre'].'</td>
 						 <td>'.$registroAlumnos['apellido'].'</td>
              <td>'.$registroAlumnos['cliente'].'</td>
-             <td>'.$registroAlumnos['totalhoras'].'</td>
+             <td>'.$registroAlumnos['horasdias'].'</td>
 						 </tr>';
       }
       ?>
