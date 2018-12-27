@@ -19,7 +19,8 @@ $resAlumnos=$conexion->query($alumnos);
   <form method="post" class="form" action="consulta.php">
 <input type="date" name="fecha1">
 <input type="date" name="fecha2">
-<input type="text" name="cliente">
+<input type="text" name="nombre">
+<input type="text" name="apellido">
 <input type="submit" name="generar_reporte">
 </form>
   <div class="row">
@@ -30,6 +31,7 @@ $resAlumnos=$conexion->query($alumnos);
           <th>NOMBRE</th>
           <th>APELLIDO</th>
           <th>CLIENTE</th>
+          <th>HORAS DIA</th>
         </tr>
       </thead>
       <tbody>
@@ -40,7 +42,8 @@ $resAlumnos=$conexion->query($alumnos);
 						 <td>'.$registroAlumnos['id'].'</td>
 						 <td>'.$registroAlumnos['nombre'].'</td>
 						 <td>'.$registroAlumnos['apellido'].'</td>
-						 <td>'.$registroAlumnos['cliente'].'</td>
+             <td>'.$registroAlumnos['cliente'].'</td>
+             <td>'.$registroAlumnos['totalhoras'].'</td>
 						 </tr>';
       }
       ?>
